@@ -5,18 +5,21 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Lanyon
-tagline:             'A Jekyll theme'
+title:               Digital Fairy Tales
+tagline:             'by Drasko DRASKOVIC'
 description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://lanyon.getpoole.com
+url:                 http://drasko.github.io
 baseurl:             ''
-paginate:            5
+paginate:            1
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Drasko DRASKOVIC
+  url:               https://twitter.com/draskodraskovic
+  email:             drasko.draskovic@gmail.com
 
 # Custom vars
 version:             1.0.0
+
+# This is the list of pages to incldue in the header of the website.
+pages_list:       {'About':'/about','Archive':'/archive','Feed':'/atom.xml'}
