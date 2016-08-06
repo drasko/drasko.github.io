@@ -73,9 +73,14 @@ kramdown:
 # Prose
 prose:
   rooturl: '_posts'
-  siteurl: 'https://drasko.github.io/'
+  siteurl: 'https://drasko.github.io'
   relativeLinks: 'https://drasko.github.io/links.jsonp'
   media: 'images'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
   metadata:
     _posts:
       - name: "published"
@@ -145,7 +150,6 @@ prose:
           element: "checkbox"
           label: "Comments"
           value: false
-
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
