@@ -76,11 +76,6 @@ prose:
   siteurl: 'https://drasko.github.io'
   relativeLinks: 'https://drasko.github.io/links.jsonp'
   media: 'images'
-  ignore:
-    - index.md
-    - _config.yml
-    - /_layouts
-    - /_includes
   metadata:
     _posts:
       - name: "published"
