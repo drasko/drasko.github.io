@@ -11,6 +11,14 @@ description:         'A reserved <a href="http://jekyllrb.com" target="_blank">J
 url:                 https://drasko.github.io
 baseurl:             ''
 
+# Social
+twitter_username:     draskodraskovic
+github_username:      drasko
+linkedin_username:    drasko.draskovic
+google_plus_username: +DraskoDRASKOVIC-DD
+facebook_username:    drasko.draskovic
+instagram_username:   draskodraskovic
+
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Paris
 future:      true
@@ -53,7 +61,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_line_numbers: 
@@ -141,3 +149,6 @@ prose:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+# Gems
+gems: [jekyll-paginate]
