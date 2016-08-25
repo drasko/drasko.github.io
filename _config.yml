@@ -74,7 +74,7 @@ kramdown:
 prose:
   rooturl: '_posts'
   siteurl: 'https://drasko.github.io'
-  relativeLinks: 'https://drasko.github.io/links.jsonp'
+  #relativeLinks: 'https://drasko.github.io/links.jsonp'
   media: 'images'
   metadata:
     _posts:
