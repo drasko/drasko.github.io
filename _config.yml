@@ -108,18 +108,6 @@ prose:
           element: "text"
           label: "Has this page been modified?"
           placeholder: "YYYY-MM-DD"
-      - name: "categories"
-        field:
-          element: "multiselect"
-          label: "Add categories"
-          placeholder: "Choose categories"
-          value: personal
-          options:
-            - name: "Personal"
-              value: personal
-            - name: "Engineering"
-              value: engineering
-          alterable: true
       - name: "tags"
         field:
           element: "text"
