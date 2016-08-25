@@ -3,11 +3,11 @@ published: true
 ---
 ## Taming the Mainflux Development Hurdle
 
-So, you tested [Mainflux](https://github.com/Mainflux/mainflux) and you like it. You want to get your feet wet in new technologies - like [Go](https://golang.org/), [NATS](http://nats.io/) or [InfluxDB](https://influxdata.com/). Or you just want to modify and custommize Mainflux to your needs.
+So, you tested [Mainflux](https://github.com/Mainflux/mainflux) and you like it. You want to get your feet wet in new technologies - like [Go](https://golang.org/), [NATS](http://nats.io/) or [InfluxDB](https://influxdata.com/). Or you are familiar with these already and you want to modify and customize Mainflux to your needs.
 
 It's easy - you did `git clone` of all the microservices repos and... what now?
 
-Weel - you must surely start NATS broker. And then Core. Which will connect to MongoDB (so you better start Mongo first). And finally you will have to start some of the API servers - for example [mainflux-http-server](https://github.com/Mainflux/mainflux-http-server).
+Weel - you must surely start NATS broker. And then mainflux Core. Which will connect to MongoDB (so you better start Mongo first). And finally you will have to start some of the API servers - for example [mainflux-http-server](https://github.com/Mainflux/mainflux-http-server).
 
 OK, so far so good.
 
