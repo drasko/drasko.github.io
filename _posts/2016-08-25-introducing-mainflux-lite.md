@@ -3,7 +3,7 @@ layout: post
 published: true
 mathjax: false
 featured: false
-comments: false
+comments: true
 ---
 ## Taming the Mainflux Development Hurdle
 
