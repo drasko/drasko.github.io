@@ -7,11 +7,12 @@ So, you tested [Mainflux](https://github.com/Mainflux/mainflux) and you like it.
 
 It's easy - you did `git clone` of all the microservices repos and... what now?
 
-Weel - you must surely start NATS broker. And then Core. Which will connect to MongoDB (so you better start Mongo first). And finally you will have to start some of the API servers - for example [`mainflux-http-server`](https://github.com/Mainflux/mainflux-http-server).
+Weel - you must surely start NATS broker. And then Core. Which will connect to MongoDB (so you better start Mongo first). And finally you will have to start some of the API servers - for example [mainflux-http-server](https://github.com/Mainflux/mainflux-http-server).
 
 OK, so far so good.
 
 Now you will need an additional terminal to shoot `curl` requests from:
+
 ```bash
 curl -s -i -H "Accept: application/json" -H "Content-Type: application/json" localhost:7070/status | json | pygmentize -l json
 ```
