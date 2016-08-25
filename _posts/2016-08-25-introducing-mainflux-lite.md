@@ -1,5 +1,10 @@
 ---
+layout: post
 published: true
+mathjax: false
+featured: false
+comments: false
+title: Test Post 2
 ---
 ## Taming the Mainflux Development Hurdle
 
