@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Mainflux Lite - Taming the Mainflux Development Hurdle
 
