@@ -4,7 +4,7 @@ published: true
 mathjax: false
 featured: false
 comments: true
-title: An Awesome Headline!
+title: Introducing Mainflux Lite
 ---
 ## Taming the Mainflux Development Hurdle
 
