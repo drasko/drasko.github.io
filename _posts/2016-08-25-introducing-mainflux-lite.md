@@ -26,13 +26,13 @@ curl -s -i -H "Accept: application/json" \
 	-H "Content-Type: application/json" \
     localhost:7070/status | json | pygmentize -l json
 ```
-This should work but the problem is obvious - changing one think will demand recompilation of several microservices that are affected, and keeping all this set-up in sync is always fun. It is not too difficult and yes - things can be automatized, but well... it's still time consuming.
+This should work but the problem is obvious - changing one thing will demand recompilation of several microservices that are affected, and keeping all this set-up in sync is always fun. It is not too difficult and yes - things can be automatized, but well... it's still time consuming.
 
 Here is where [Mainflux Lite](https://github.com/Mainflux/mainflux-lite) comes to rescue.
 
-Mainflux Lite is actually several Mainflux microservices bundled into a single monilite binary. We took API server and DB backend and bundled them into one. We trow out NATS broker for now (not needed in this combo) and the only external thing that is still needed is DB (MongoDB for now).
+Mainflux Lite is actually several Mainflux microservices bundled into a single monilite binary. We took API server and DB backend and bundled them into one. We threw out NATS broker for now (not needed in this combo) and the only external thing that is still needed is DB (MongoDB).
 
-As a result we have one Go program that compiles quickly and is easy to change - bot API side and DB backend. This way we can develop quickly.
+As a result we have one Go program that compiles quickly and is easy to change - both API side and DB backend. This way we can develop quickly.
 
 It is also simpler to deploy the server - so when we prototype sensor setup or we do not need full-blown  Mainflux system then Mainflux Lite can be perfect (for example embedded in RPi for IoT gateway purposes).
 
