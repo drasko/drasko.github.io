@@ -4,9 +4,16 @@ published: true
 mathjax: false
 featured: false
 comments: true
-title: Introducing Mainflux Lite
+title: Taming the Mainflux Development Hurdle
+description: ''
+headline: ''
+modified: ''
+categories: ''
+tags: ''
+imagefeature: ''
 ---
-## Taming the Mainflux Development Hurdle
+
+![](https://hd.unsplash.com/photo-1466074395296-41cba23ce4f8)
 
 So, you tested [Mainflux](https://github.com/Mainflux/mainflux) and you like it. You want to get your feet wet in new technologies - like [Go](https://golang.org/), [NATS](http://nats.io/) or [InfluxDB](https://influxdata.com/). Or you are familiar with these already and you want to modify and customize Mainflux to your needs.
 
