@@ -4,6 +4,7 @@ published: true
 mathjax: false
 featured: false
 comments: true
+title: An Awesome Headline!
 ---
 ## Taming the Mainflux Development Hurdle
 
@@ -18,7 +19,8 @@ OK, so far so good.
 Now you will need an additional terminal to shoot `curl` requests from:
 
 ```bash
-curl -s -i -H "Accept: application/json" -H "Content-Type: application/json" localhost:7070/status | json | pygmentize -l json
+curl -s -i -H "Accept: application/json" -H "Content-Type: application/json" \
+    localhost:7070/status | json | pygmentize -l json
 ```
 This should work but the problem is obvious - changing one think will demand recompilation of several microservices that are affected, and keeping all this set-up in sync is always fun. It is not too difficult and yes - things can be automatized, but well... it's still time consuming.
 
