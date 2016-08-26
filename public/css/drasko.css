@@ -12,9 +12,9 @@
 	position: relative;
 	float: left;
 	display: block;
-	left: 50%;
 	margin-bottom: 0;
 	padding: 0;
+	padding-bottom: 20px;
 }
 
 #social li {
@@ -22,11 +22,29 @@
 	position: relative;
 	float: left;
 	display: block;
-	right: 50%;
 	padding: 0
 }
 
 #social li a {
-    padding: 0px 20px;
-    text-decoration: none
+    text-decoration: none;
+	padding: 0px 20px 0px 0px;
+}
+
+
+#contact ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#contact li {
+    list-style-type: none;
+	padding-left: 0px;
+	padding-top: 10px;
+}
+#contact li a {
+    text-decoration: none;
+}
+
+#contact li a i {
+    padding-right: 20px;
 }

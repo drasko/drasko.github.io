@@ -8,3 +8,5 @@ published: true
 
 Electronics and Telecom. HW and SW. Golang and Erlang. IoT and Blockchain.
 
+
+{% include contact_buttons.html %}
