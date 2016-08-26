@@ -20,12 +20,12 @@ facebook_username:    drasko.draskovic
 instagram_username:   draskodraskovic
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Europe/Paris
-future:      true
-highlighter: rouge
-markdown:    kramdown
-paginate:            1
-paginate_path: "page:num"
+timezone:       Europe/Paris
+future:         true
+highlighter:    rouge
+markdown:       kramdown
+paginate:       5
+paginate_path:  "page:num"
 
 # About/contact
 author:
@@ -37,7 +37,7 @@ author:
 version:             1.0.0
 
 # This is the list of pages to incldue in the header of the website.
-pages_list:       {'About':'/about','Feed':'/atom.xml'}
+pages_list:       {'About':'/about', 'Archive':'/archive', 'Feed':'/atom.xml'}
 
 # Prose
 prose:
