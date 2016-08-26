@@ -1,18 +1,29 @@
+/**
+ * Center list, as found here:
+ * http://stackoverflow.com/questions/1695175/how-to-horizontally-center-an-unordered-list-of-unknown-width
+ */
+#social {
+	width: 100%;
+	overflow: hidden;
+}
+
 #social ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    margin-left: 40%;
+	list-style: none;
+	position: relative;
+	float: left;
+	display: block;
+	left: 50%;
 }
 
 #social li {
-    float: left;
     list-style-type: none;
+	position: relative;
+	float: left;
+	display: block;
+	right: 50%;
 }
 
 #social li a {
-    display: block;
-    text-align: center;
-    padding-right: 15px;
+    padding: 20px;
     text-decoration: none
 }
