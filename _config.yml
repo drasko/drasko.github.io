@@ -10,7 +10,7 @@ tagline:              'by Drasko DRASKOVIC'
 description:          'Electronics and Telecom. HW and SW. Golang and Erlang. IoT and Blockchain.<br><br>Made by <a href="https://github.com/drasko" target="_blank">@drasko</a>.'
 url:                  https://drasko.github.io
 baseurl:              ''
-excerpt_separator:    '\n\n\n'
+excerpt_separator:    \n\n\n
 
 # Social
 twitter_username:     draskodraskovic
