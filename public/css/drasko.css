@@ -55,9 +55,10 @@
 	position: relative;
 	float: left;
 	display: block;
-	margin-bottom: 0;
+	width: 100%;
 	padding: 0;
-	padding-bottom: 20px
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 #sidebar_contact li {
