@@ -30,7 +30,7 @@
 	padding: 0px 20px 0px 0px;
 }
 
-
+/** Contact */
 #contact ul {
 	list-style: none;
 	padding-left: 0;
@@ -39,12 +39,36 @@
 #contact li {
     list-style-type: none;
 	padding-left: 0px;
-	padding-top: 10px;
+	padding-top: 0px;
 }
 #contact li a {
     text-decoration: none;
 }
 
 #contact li a i {
-    padding-right: 20px;
+    padding-right: 0px;
+}
+
+/** Sidebar Contact */
+#sidebar_contact ul {
+	list-style: none;
+	position: relative;
+	float: left;
+	display: block;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+#sidebar_contact li {
+    list-style-type: none;
+	position: relative;
+	float: left;
+	display: block;
+	padding: 0
+}
+
+#sidebar_contact li a {
+    text-decoration: none;
+	padding: 0px 20px 0px 0px;
+	font-size: 1.5em;
 }
