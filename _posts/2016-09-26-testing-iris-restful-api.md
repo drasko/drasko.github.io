@@ -7,7 +7,7 @@ comments: true
 title: Testing Iris RESTful API
 ---
 ## Go Tests for Iris
-![]({{site.baseurl}}/https://hd.unsplash.com/photo-1466027397211-20d0f2449a3f)
+![](https://hd.unsplash.com/photo-1466027397211-20d0f2449a3f)
 [Mainflux](https://github.com/Mainflux/mainflux) project adopts [TDD](https://en.wikipedia.org/wiki/Test-driven_development) approach, and Go is a great language with powerful [testing](https://golang.org/pkg/testing/) capabilities.
 
 
