@@ -16,6 +16,7 @@ Mainflux project adopts [TDD](https://en.wikipedia.org/wiki/Test-driven_developm
 ## Go Testing Framework
 Go `Testing` framework is nicely explained [here](https://golang.org/doc/code.html#Testing).
 In short, recipe for testing `<my_module>.go` is following:
+
 - Create `<my_module>_test.go` and make it belong to the same package (it is actually package we are testing, not only this particular module)
 - In your test, use `import "testing"`
 - Define function `func TestSomething(t *testing.T)`
