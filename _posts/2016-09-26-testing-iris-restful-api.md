@@ -6,7 +6,7 @@ featured: false
 comments: true
 title: Testing Iris RESTful API
 ---
-## Go Tests for Iris
+## Iris and Mainflux
 ![](https://hd.unsplash.com/photo-1466027397211-20d0f2449a3f)
 [Iris](https://github.com/kataras/iris) is a HTTP framework written in Go. We have choosen Iris as HTTP API protocol developemnt framework for [Mainflux](https://github.com/Mainflux/mainflux) IoT platform becaus of it's impressive bechmarks and simplicity. As robustness and consequently test coverage is very important for any serious and professionla project, this article explains Iris RESTful API testing techniques on the example of Mainflux server.
 
@@ -22,8 +22,22 @@ In short, recipe for testing `<my_module>.go` is following:
 - Define function `func TestSomething(t *testing.T)`
 - Optionally, if some prerequisite set-up is needed you can use `func TestMain(m *testing.M)`
 
-As explained [here](https://blog.golang.org/examples), tests can be run via `go test` in the current dir. In order to test the whole project Travis for example uses:
+As explained [here](https://blog.golang.org/examples), tests can be run via `go test` in the current dir. In order to test the whole project, Travis for example uses:
 
 ```bash
 go test -v ./...
 ```
+
+So this is the way you should test your project from the project root.
+
+## Testing Go HTTP RESTful APIs
+Usually, for testing HTTP servers Go already provides testing library called [httptest](https://golang.org/pkg/net/http/httptest/). Some examples of using this library can be found [here](https://gist.github.com/cespare/4992458), [here](http://www.markjberger.com/testing-web-apps-in-golang/), [here](https://groups.google.com/forum/#!topic/golang-nuts/GWYSt70uvlQ) or [here](https://blog.pivotal.io/labs/labs/a-rubyist-leaning-go-testing-http-handlers). Or even [here](https://elithrar.github.io/article/testing-http-handlers-go/).
+
+However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.com/valyala/fasthttp)(look at the imports [here](https://github.com/kataras/iris/blob/master/http.go)). This means that you can use `httptest` to test the server.
+
+[Gin Goinc](https://github.com/gin-gonic/gin) for example uses `net/http` (as can be seen in imports [here](https://github.com/gin-gonic/gin/blob/develop/gin.go), so you can write tests like [this](https://github.com/gin-gonic/gin/issues/549#issuecomment-203419679).
+
+## Data Mocking, Interfaces and DockerMock
+
+
+
