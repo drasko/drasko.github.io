@@ -96,6 +96,11 @@ Interfaces are very important concept in Go, and be sure to know them. There is 
 
 Never the less, mocking all Mongo functions is not a trivial job. A more realistic and modern way of this kind of testing can be achieved using Docker, as described in [this article](http://developers.almamedia.fi/painless-mongodb-testing-with-docker-and-golang/). Following this principle, a [dockertest](https://github.com/ory-am/dockertest) project implements dockerized testing environment that firs perfectly for Mainflux use-case and can be used even with Travis CI.
 
+Mainflux [http_server_test.go](https://github.com/Mainflux/mainflux/blob/master/servers/http_server_test.go) uses `dockertest` which is initialized in the `TestMain()` function. This function is Go testing framework's special function and you can read more about it [here](https://golang.org/pkg/testing/)
+
+## Conclusion
+This 
+
 
 
 
