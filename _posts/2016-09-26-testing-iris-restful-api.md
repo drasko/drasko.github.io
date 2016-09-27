@@ -37,7 +37,7 @@ However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.c
 
 [Gin Gonic](https://github.com/gin-gonic/gin) for example uses `net/http` (as can be seen in imports [here](https://github.com/gin-gonic/gin/blob/develop/gin.go), so you can write tests like [this](https://github.com/gin-gonic/gin/issues/549#issuecomment-203419679).
 
-[@kataras](https://github.com/kataras), Iris author, reccomends usage of the [httpexpect[(https://github.com/gavv/httpexpect) testing framework for testing Iris-based HTTP servers - please refer to [this link](https://github.com/kataras/iris#testing).
+[@kataras](https://github.com/kataras), Iris author, reccomends usage of the [httpexpect](https://github.com/gavv/httpexpect) testing framework for testing Iris-based HTTP servers - please refer to [this link](https://github.com/kataras/iris#testing).
 
 ### Httpexpect, Fasthttp and Iris
 This is a hard part ;). Let's go slowly in code disecting.
