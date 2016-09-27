@@ -94,4 +94,8 @@ For this mocking strategy, Go uses interfaces - as explained [here](http://relis
 
 Interfaces are very important concept in Go, and be sure to know them. There is very good [article](http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go) that will help you understand them well.
 
-Never the less, 
+Never the less, mocking all Mongo functions is not a trivial job. A more realistic and modern way of this kind of testing can be achieved using Docker, as described in [this article](http://developers.almamedia.fi/painless-mongodb-testing-with-docker-and-golang/). Following this principle, a [dockertest](https://github.com/ory-am/dockertest) project implements dockerized testing environment that firs perfectly for Mainflux use-case and can be used even with Travis CI.
+
+
+
+
