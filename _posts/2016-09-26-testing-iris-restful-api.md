@@ -23,6 +23,7 @@ In short, recipe for testing `<my_module>.go` is following:
 - Optionally, if some prerequisite set-up is needed you can use `func TestMain(m *testing.M)`
 
 As explained [here](https://blog.golang.org/examples), tests can be run via `go test` in the current dir. In order to test the whole project Travis for example uses:
+
 ```bash
 go test -v ./...
 ```
