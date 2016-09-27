@@ -42,7 +42,9 @@ However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.c
 ### Fasthttp
 In [this](https://github.com/gavv/httpexpect/blob/master/example/iris.go) `httpexpect` example we can see that func `IrisHandler()` is returning `fasthttp.RequestHandler`, which is `api.Router`, where `api` is `iris.New()`, i.e. Iris instance. Then [here](https://github.com/gavv/httpexpect/blob/master/example/iris_test.go) in `irisTester()` function we use this handler to create `httpexpect` instance.
 
-Further, when we look `FrameworkAPI` interface over [here](https://github.com/kataras/iris/blob/master/iris.go), we can see that this structure contains member function `Tester()`, defined in the following way: `Tester(*testing.T) *httpexpect.Expect`, which is basically a getter which fetches `testFramework` member of the structure `Framework`. This member is initialized via function `NewTester()`
+Further, when we look `FrameworkAPI` interface over [here](https://github.com/kataras/iris/blob/master/iris.go), we can see that this structure contains member function `Tester()`, defined in the following way: `Tester(*testing.T) *httpexpect.Expect`, which is basically a getter which fetches `testFramework` member of the structure `Framework`. This member is initialized via function `NewTester()` in which `httpexpect.Expect` instance is created based on `api.Router`.
+
+This means that every Iris server already have member `testFramework` which is correct `httpexpect.Expect` instance for our fasthttp handler. It is static member (begins with lowercase letter, thus not reachable from other packages) and can be obtained via `api.Tester()` getter.
 
 
 
