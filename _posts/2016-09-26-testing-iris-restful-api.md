@@ -46,7 +46,29 @@ Further, when we look `FrameworkAPI` interface over [here](https://github.com/ka
 
 This means that every Iris server already have member `testFramework` which is correct `httpexpect.Expect` instance for our fasthttp handler. It is static member (begins with lowercase letter, thus not reachable from other packages) and can be obtained via `api.Tester()` getter.
 
+This is why Mainflux [http_server_test.go](https://github.com/Mainflux/mainflux/blob/master/servers/http_server_test.go) uses `iris.Tester(t)` to fetch correct `httpexpect` instance of the current Iris Framework started in `HttpServer()` gorutine just before.
 
+Code of the test function is following:
+
+```go
+func TestServer(t *testing.T) {
+	// Config
+	var cfg config.Config
+	cfg.Parse()
+
+	go HttpServer(cfg)
+
+	// prepare test framework
+	if ok := <-iris.Available; !ok {
+		t.Fatal("Unexpected error: server cannot start, please report this as bug!!")
+	}
+
+
+	e := iris.Tester(t)
+	r := e.Request("GET", "/status").Expect().Status(iris.StatusOK).JSON()
+	fmt.Println("%v", r)
+}
+```
 
 
 ## Data Mocking, Interfaces and DockerMock
