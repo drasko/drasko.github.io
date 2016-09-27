@@ -81,6 +81,7 @@ One more thinng should be noted - and that is the use of `Available` channel. It
 Available chan bool
 ```
 
+In test function we use this flag to block (we are syncing on the channel) untill HTTP server is started. Then we can continue with the test (i.e. sending HTTP requests).
 
 
 ## Data Mocking, Interfaces and DockerMock
