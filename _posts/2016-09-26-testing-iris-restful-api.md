@@ -37,6 +37,16 @@ However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.c
 
 [Gin Goinc](https://github.com/gin-gonic/gin) for example uses `net/http` (as can be seen in imports [here](https://github.com/gin-gonic/gin/blob/develop/gin.go), so you can write tests like [this](https://github.com/gin-gonic/gin/issues/549#issuecomment-203419679).
 
+[@kataras](https://github.com/kataras), Iris author, reccomends usage of the [httpexpect[(https://github.com/gavv/httpexpect) testing framework for testing Iris-based HTTP servers - please refer to [this link](https://github.com/kataras/iris#testing).
+
+### Fasthttp
+In [this](https://github.com/gavv/httpexpect/blob/master/example/iris.go) `httpexpect` example we can see that func `IrisHandler()` is returning `fasthttp.RequestHandler`, and then [here](https://github.com/gavv/httpexpect/blob/master/example/iris_test.go) in `irisTester()` function we use this handler to create `httpexpect` instance.
+
+Further, when we look `FrameworkAPI` interface over [here](https://github.com/kataras/iris/blob/master/iris.go), we can see that this structure contains member `Tester` which is defined in the following way: `Tester(*testing.T) *httpexpect.Expect`
+
+
+
+
 ## Data Mocking, Interfaces and DockerMock
 
 
