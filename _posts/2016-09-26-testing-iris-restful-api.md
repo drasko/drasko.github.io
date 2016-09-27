@@ -70,5 +70,17 @@ func TestServer(t *testing.T) {
 }
 ```
 
+One more thinng should be noted - and that is the use of `Available` channel. It is explained [here](https://github.com/kataras/iris/blob/master/iris.go), where we can see the comment in the code:
+
+```go
+// Available is a channel type of bool, fired to true when the server is opened and all plugins ran
+// never fires false, if the .Close called then the channel is re-allocating.
+// the channel remains open until you close it.
+//
+// look at the http_test.go file for a usage example
+Available chan bool
+```
+
+
 
 ## Data Mocking, Interfaces and DockerMock
