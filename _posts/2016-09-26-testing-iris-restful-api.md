@@ -39,7 +39,7 @@ However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.c
 
 [@kataras](https://github.com/kataras), Iris author, reccomends usage of the [httpexpect[(https://github.com/gavv/httpexpect) testing framework for testing Iris-based HTTP servers - please refer to [this link](https://github.com/kataras/iris#testing).
 
-### Fasthttp and Iris
+### Httpexpect, Fasthttp and Iris
 This is a hard part ;). Let's go slowly in code disecting.
 
 In [this](https://github.com/gavv/httpexpect/blob/master/example/iris.go) `httpexpect` example we can see that func `IrisHandler()` is returning `fasthttp.RequestHandler`, which is `api.Router`, where `api` is `iris.New()`, i.e. Iris instance. Then [here](https://github.com/gavv/httpexpect/blob/master/example/iris_test.go) in `irisTester()` function we use this handler to create `httpexpect` instance.
@@ -99,7 +99,12 @@ Never the less, mocking all Mongo functions is not a trivial job. A more realist
 Mainflux [http_server_test.go](https://github.com/Mainflux/mainflux/blob/master/servers/http_server_test.go) uses `dockertest` which is initialized in the `TestMain()` function. This function is Go testing framework's special function and you can read more about it [here](https://golang.org/pkg/testing/)
 
 ## Conclusion
-This 
+In the conclusion of this short tutorial, I hope that it brings better unerstanding of several concepts needed for Iris HTTP server with MongoDB testing:
+
+- Fasthttp
+- Httpexpect
+- iris.Available sync channel
+- Dockertest
 
 
 
