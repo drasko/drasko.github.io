@@ -33,9 +33,9 @@ So this is the way you should test your project from the project root.
 ## Testing Go HTTP RESTful APIs
 Usually, for testing HTTP servers Go already provides testing library called [httptest](https://golang.org/pkg/net/http/httptest/). Some examples of using this library can be found [here](https://gist.github.com/cespare/4992458), [here](http://www.markjberger.com/testing-web-apps-in-golang/), [here](https://groups.google.com/forum/#!topic/golang-nuts/GWYSt70uvlQ) or [here](https://blog.pivotal.io/labs/labs/a-rubyist-leaning-go-testing-http-handlers). Or even [here](https://elithrar.github.io/article/testing-http-handlers-go/).
 
-However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.com/valyala/fasthttp)(look at the imports [here](https://github.com/kataras/iris/blob/master/http.go)). This means that you can use `httptest` to test the server.
+However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.com/valyala/fasthttp) (look at the imports [here](https://github.com/kataras/iris/blob/master/http.go)). This means that you can use `httptest` to test the server.
 
-[Gin Goinc](https://github.com/gin-gonic/gin) for example uses `net/http` (as can be seen in imports [here](https://github.com/gin-gonic/gin/blob/develop/gin.go), so you can write tests like [this](https://github.com/gin-gonic/gin/issues/549#issuecomment-203419679).
+[Gin Gonic](https://github.com/gin-gonic/gin) for example uses `net/http` (as can be seen in imports [here](https://github.com/gin-gonic/gin/blob/develop/gin.go), so you can write tests like [this](https://github.com/gin-gonic/gin/issues/549#issuecomment-203419679).
 
 [@kataras](https://github.com/kataras), Iris author, reccomends usage of the [httpexpect[(https://github.com/gavv/httpexpect) testing framework for testing Iris-based HTTP servers - please refer to [this link](https://github.com/kataras/iris#testing).
 
@@ -105,7 +105,3 @@ In the conclusion of this short tutorial, I hope that it brings better unerstand
 - Httpexpect
 - iris.Available sync channel
 - Dockertest
-
-
-
-
