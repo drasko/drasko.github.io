@@ -40,6 +40,8 @@ However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.c
 [@kataras](https://github.com/kataras), Iris author, reccomends usage of the [httpexpect[(https://github.com/gavv/httpexpect) testing framework for testing Iris-based HTTP servers - please refer to [this link](https://github.com/kataras/iris#testing).
 
 ### Fasthttp and Iris
+This is a hard part ;). Let's go slowly in code disecting.
+
 In [this](https://github.com/gavv/httpexpect/blob/master/example/iris.go) `httpexpect` example we can see that func `IrisHandler()` is returning `fasthttp.RequestHandler`, which is `api.Router`, where `api` is `iris.New()`, i.e. Iris instance. Then [here](https://github.com/gavv/httpexpect/blob/master/example/iris_test.go) in `irisTester()` function we use this handler to create `httpexpect` instance.
 
 Further, when we look `FrameworkAPI` interface over [here](https://github.com/kataras/iris/blob/master/iris.go), we can see that this structure contains member function `Tester()`, defined in the following way: `Tester(*testing.T) *httpexpect.Expect`, which is basically a getter which fetches `testFramework` member of the structure `Framework`. This member is initialized via function `NewTester()` in which `httpexpect.Expect` instance is created based on `api.Router`.
@@ -86,3 +88,10 @@ In test function we use this flag to block (we are syncing on the channel) until
 
 
 ## Data Mocking, Interfaces and DockerMock
+One more non-trivial thing makes Mainflux server testing more complicated - and that is the use of database. Usual practice during the test phase is that databse responses are mocked (stubbed). Similar approach is taken for other external libraries. This way we focus to testing of our module, simulating the responses from external functions (like database calls).
+
+For this mocking strategy, Go uses interfaces - as explained [here](http://relistan.com/writing-testable-apps-in-go/) or [here](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742#.b05i7m1om).
+
+Interfaces are very important concept in Go, and be sure to know them. There is very good [article](http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go) that will help you understand them well.
+
+Never the less, 
