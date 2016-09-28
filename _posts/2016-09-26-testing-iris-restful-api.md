@@ -8,7 +8,7 @@ title: Testing Iris RESTful API
 ---
 ## Iris and Mainflux
 ![](https://hd.unsplash.com/photo-1466027397211-20d0f2449a3f)
-[Iris](https://github.com/kataras/iris) is a HTTP framework written in Go. We have choosen Iris as HTTP API protocol development framework for [Mainflux](https://github.com/Mainflux/mainflux) IoT platform because of it's impressive bechmarks and simplicity. As robustness and consequently test coverage is very important for any serious and professionla project, this article explains Iris RESTful API testing techniques on the example of Mainflux server.
+[Iris](https://github.com/kataras/iris) is a HTTP framework written in Go. We have choosen Iris as HTTP API protocol development framework for [Mainflux](https://github.com/Mainflux/mainflux) IoT platform because of it's impressive bechmarks and simplicity. As robustness and consequently test coverage is very important for any serious and professional project, this article explains Iris RESTful API testing techniques on the example of Mainflux server.
 
 
 Mainflux project adopts [TDD](https://en.wikipedia.org/wiki/Test-driven_development) approach, and Go is a great language with powerful [testing](https://golang.org/pkg/testing/) capabilities - so it is well suited for writing test scenarios in an organized and well designed manner.
@@ -33,7 +33,7 @@ So this is the way you should test your project from the project root.
 ## Testing Go HTTP RESTful APIs
 Usually, for testing HTTP servers Go already provides testing library called [httptest](https://golang.org/pkg/net/http/httptest/). Some examples of using this library can be found [here](https://gist.github.com/cespare/4992458), [here](http://www.markjberger.com/testing-web-apps-in-golang/), [here](https://groups.google.com/forum/#!topic/golang-nuts/GWYSt70uvlQ) or [here](https://blog.pivotal.io/labs/labs/a-rubyist-leaning-go-testing-http-handlers). Or even [here](https://elithrar.github.io/article/testing-http-handlers-go/).
 
-However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.com/valyala/fasthttp) (look at the imports [here](https://github.com/kataras/iris/blob/master/http.go)). This means that you can use `httptest` to test the server.
+However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.com/valyala/fasthttp) (look at the imports [here](https://github.com/kataras/iris/blob/master/http.go)). This means that you can not use `httptest` to test the server.
 
 [Gin Gonic](https://github.com/gin-gonic/gin) for example uses `net/http` (as can be seen in imports [here](https://github.com/gin-gonic/gin/blob/develop/gin.go), so you can write tests like [this](https://github.com/gin-gonic/gin/issues/549#issuecomment-203419679).
 
@@ -42,7 +42,7 @@ However, Iris does not use Go's `net/http` - it uses [fasthttp](https://github.c
 ### Httpexpect, Fasthttp and Iris
 This is a hard part ;). Let's go slowly in code disecting.
 
-In [this](https://github.com/gavv/httpexpect/blob/master/example/iris.go) `httpexpect` example we can see that func `IrisHandler()` is returning `fasthttp.RequestHandler`, which is `api.Router`, where `api` is `iris.New()`, i.e. Iris instance. Then [here](https://github.com/gavv/httpexpect/blob/master/example/iris_test.go) in `irisTester()` function we use this handler to create `httpexpect` instance.
+In [this](https://github.com/gavv/httpexpect/blob/master/example/iris.go) `httpexpect` example we can see that func `IrisHandler()` is returning `fasthttp.RequestHandler`, which is `api.Router`, where `api` is `iris.New()`, i.e. Iris instance. Then [here](https://github.com/gavv/httpexpect/blob/master/example/iris_test.go) in `irisTester()` function we use this handler (`Router` of the Iris instance) to create `httpexpect` instance.
 
 Further, when we look `FrameworkAPI` interface over [here](https://github.com/kataras/iris/blob/master/iris.go), we can see that this structure contains member function `Tester()`, defined in the following way: `Tester(*testing.T) *httpexpect.Expect`, which is basically a getter which fetches `testFramework` member of the structure `Framework`. This member is initialized via function `NewTester()` in which `httpexpect.Expect` instance is created based on `api.Router`.
 
@@ -103,5 +103,5 @@ In the conclusion of this short tutorial, I hope that it brings better unerstand
 
 - Fasthttp
 - Httpexpect
-- iris.Available sync channel
+- `iris.Tester()` getter and `iris.Available` sync channel
 - Dockertest
