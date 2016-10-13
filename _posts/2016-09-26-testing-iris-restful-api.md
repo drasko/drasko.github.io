@@ -10,9 +10,10 @@ title: Testing Iris RESTful API
 ![](https://hd.unsplash.com/photo-1466027397211-20d0f2449a3f)
 [Iris](https://github.com/kataras/iris) is a HTTP framework written in Go. We have choosen Iris as HTTP API protocol development framework for [Mainflux](https://github.com/Mainflux/mainflux) IoT platform because of it's impressive bechmarks and simplicity. As robustness and consequently test coverage is very important for any serious and professional project, this article explains Iris RESTful API testing techniques on the example of Mainflux server.
 
-**EDIT 1** - Due to the needs for leanest approach possible, Mainflux project decided to strip Iris (and any other framework) and stick with bare Go standard lib for HTTP development.
+>**EDIT 1** - Due to the needs for leanest approach possible, Mainflux project decided to strip Iris 
+>(and any other framework) and stick with bare Go standard lib for HTTP development.
 
-**EDIT 2** - Interesting discussion on this subject can be found on [Reddit](https://www.reddit.com/r/golang/comments/54yvdq/testing_iris_restful_api/)
+>**EDIT 2** - Interesting discussion on this subject can be found on [Reddit](https://www.reddit.com/r/golang/comments/54yvdq/testing_iris_restful_api/)
 
 Mainflux project adopts [TDD](https://en.wikipedia.org/wiki/Test-driven_development) approach, and Go is a great language with powerful [testing](https://golang.org/pkg/testing/) capabilities - so it is well suited for writing test scenarios in an organized and well designed manner.
 
